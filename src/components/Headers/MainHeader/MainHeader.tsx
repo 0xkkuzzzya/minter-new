@@ -27,7 +27,7 @@ const HeaderImg = styled.img `
 const MainName = styled.h1`
     color: white;
     margin-left: 20px;
-    font-size: 25px;
+    font-size: 20px;
 `
 
 

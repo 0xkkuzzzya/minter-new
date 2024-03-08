@@ -6,7 +6,7 @@ const Button = styled.div`
     height: 35px;
     border: none;
     color: black;
-    font-family: 'Metropolis', sans-serif;
+    font-family: 'Inter', sans-serif;
     border-radius: 5px;
     margin-right: 50px;
     cursor: pointer;

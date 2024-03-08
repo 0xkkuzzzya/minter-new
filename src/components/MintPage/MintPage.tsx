@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { MintPageContainer } from "./MintPageContainer/MintPageContainer";
 
 const Container = styled.div`
-    width: 600px;
-    height: 100px;
-    background-color: red;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
 `
 
 
 export const MintPage = () => {
     return(
         <Container>
-            
+            <MintPageContainer/>
         </Container>
     )
 }

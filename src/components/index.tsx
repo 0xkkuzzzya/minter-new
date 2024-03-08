@@ -16,7 +16,7 @@ export const MainIndex = () => {
             <MainHeader/>
             <Routes>
                 <Route path="/" element={<StablePage/>} />
-                <Route path="/stablecoin " element={<MintPage/>} />
+                <Route path="/stablecoin/:stable" element={<MintPage/>} />
 			</Routes>
         </Contrainer>
     )

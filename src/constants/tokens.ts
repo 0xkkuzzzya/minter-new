@@ -1,8 +1,11 @@
+import { TokenBalance, useTokenBalanceStore } from "../hooks/useBalanceStore";
 import USQLogo from "../assets/webp/USQLogo.webp";
 import ATOMLogo from "../assets/webp/AtomLogo.webp";
 import QubeLogo from "../assets/webp/Qube Logo Circle.webp";
 import WBTCLogo from "../assets/webp/WBTCLogo.webp"
 import USDCLogo from "../assets/webp/USDC Logo.webp"
+
+
 
 
 interface TokenInfo {
@@ -51,3 +54,19 @@ export const TOKEN_INFO: TokenInfo[] = [
         },
 ]
 
+export const STABLE_INFO: Array<TokenBalance> = [
+        {
+                Display: 'USQ',
+                Logo: USQLogo,
+                Amount: 0,
+                Info: 'USQ uses the Delta-Neutrality mechanism and principles of decentralized finance to achieve and maintain its peg, facilitating efficient and secure transactions within the ecosystem.',
+                Mechanism: 'Delta'     
+        },
+        {
+                Display: 'CNYQ',
+                Logo: USQLogo,
+                Amount: 0,
+                Info: 'CNYQ uses the GMB mechanism and principles of decentralized finance to achieve and maintain its peg, facilitating efficient and secure transactions within the ecosystem.',
+                Mechanism: 'GMB'    
+        }
+]

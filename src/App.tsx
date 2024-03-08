@@ -3,7 +3,7 @@ import { MainIndex } from './components';
 
 function App() {
 	return (
-		<div className="App">
+		<div>
 			<MainIndex/>
 		</div>
 	);

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link, useMatch } from "react-router-dom";
 import { ReactNode } from "react";
-import React from "react";
 
 const LinkText = (Link)
 const LinkBLock = styled(LinkText)`
@@ -9,7 +8,7 @@ const LinkBLock = styled(LinkText)`
     text-decoration: none;
     font-weight: 700;
     outline: none;
-    font-size: 17px;
+    font-size: 12px;
 `
 
 interface Props {
@@ -17,7 +16,7 @@ interface Props {
     children: ReactNode;
 }
 
-export const StablePageCustomLink = ({children, to}: Props) => {
+export const MintPageLinkBack = ({children, to}: Props) => {
 
     const match = useMatch(to)
 
@@ -25,7 +24,7 @@ export const StablePageCustomLink = ({children, to}: Props) => {
         <LinkBLock 
         to={to}
         style={{
-            color: '#fff',
+            color: '#BABABA',
             transition: '.2s ease-in-out'
         }}
         >
