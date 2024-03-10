@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TokenInfo } from "../TokenInfo/TokenInfo";
+import { ConvertBlock } from "../ConvertBlock/ConvertBlock";
 
 const Container = styled.div`
     width: 100%;
@@ -13,6 +14,7 @@ export const MintPageContainer = () => {
     return(
         <Container>
             <TokenInfo/>
+            <ConvertBlock/>
         </Container>
     )
 }

@@ -5,10 +5,11 @@ import { MintPageLinkBack } from "../../CustomLink/MintPageLinkBack/MintPageLink
 import { StableInfo } from "./StableInfo/StableInfo";
 
 const Container = styled.div`
-    max-width: 20%;
+    width: 300px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin-right: 10px;
 `
 
 const LinkBlock = styled.div`
@@ -26,7 +27,7 @@ export const TokenInfo = () => {
     return(
         <Container>
             <LinkBlock>
-                <MintPageLinkBack to="/">
+                <MintPageLinkBack to="/stablecoins">
                     <ArrowLogo src={Arrow}></ArrowLogo>
                     Back
                 </MintPageLinkBack>
