@@ -18,7 +18,7 @@ export const MainIndex = () => {
             <Routes>
                 <Route path="/" element={<HomePage/>} />
                 <Route path="/stablecoins" element={<StablePage/>} />
-                <Route path="/stablecoin/:stable" element={<MintPage/>} />
+                <Route path="/stablecoin/:stableID" element={<MintPage/>} />
 			</Routes>
         </Contrainer>
     )

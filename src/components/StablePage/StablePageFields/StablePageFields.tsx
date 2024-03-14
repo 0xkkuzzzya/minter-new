@@ -1,16 +1,10 @@
 import styled from "styled-components";
-import { STABLE_INFO } from "../../../constants/tokens";
+import Arrow from '../../../assets/webp/Arrow.svg'
 import { StablePageCustomLink } from "../../CustomLink/StablePageCustomLink/StablePageCustomLink";
 import { useMediaQuery } from "react-responsive";
-import Arrow from '../../../assets/webp/Arrow.svg'
+import { usePairStore } from "../../../hooks/usePairStore";
+import { STABLE_INFO } from "../../../constants/tokens";
 
-export interface Vault {
-    Display: string,
-    Logo: string,
-    Amount: number,
-    Info: string,
-    Mechanism: string
-}
 
 const Container = styled.div`
     width: 100%;
@@ -60,7 +54,7 @@ const MechanismBlock = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-` 
+`
 
 const Button = styled.button`
     width: 150px;
@@ -72,6 +66,7 @@ const Button = styled.button`
     margin-right: 15px;
     white-space: nowrap;
     padding: 0;
+    font-weight: 700;
     @media (max-width: 730px) {
         width: 120px;
     }
@@ -98,6 +93,8 @@ const ArrowImg = styled.img`
 
 export const StablePageFields = () => {
 
+    const [pairs, setPairs] = usePairStore();
+
     const isDes = useMediaQuery({
         query: "(min-device-width: 500px)",
     });
@@ -105,33 +102,31 @@ export const StablePageFields = () => {
         query: "(max-device-width: 500px)",
     });
 
-    let temp_vault: Vault[] = []
 
-    STABLE_INFO.map((vault_token) => 
-        temp_vault.push({
-            Display: vault_token.Display,
-            Logo: vault_token.Logo,
-            Amount: vault_token.Amount,
-            Info: vault_token.Info,
-            Mechanism: vault_token.Mechanism,
+    pairs.map ((pair) => {
+        STABLE_INFO.map((token) => {
+            if (pair.displayOut == token.Display) {
+                pair.logo = token.Logo
+            }
         })
+    })
+
+
+    const StableBlock = pairs.map((pair) =>
+        <Container>
+            <NameBlock>
+                <TokenBlock>
+                    <TokenLogo src={pair.logo}></TokenLogo>
+                    <TokenName>{pair.displayOut}</TokenName>
+                </TokenBlock>
+                <MechanismBlock>{pair.model}</MechanismBlock>
+            </NameBlock>
+            {isDes && <LinkBlock> <StablePageCustomLink to={`/stablecoin/${pair.pairId}`}> <Button> Mint / Burn </Button> </StablePageCustomLink> </LinkBlock>}
+            {isMob && <CircleButton> <StablePageCustomLink to={`/stablecoin/${pair.pairId}`}> <ArrowImg src={Arrow}></ArrowImg> </StablePageCustomLink> </CircleButton>}
+        </Container>
     )
 
-    const StableBlock = temp_vault.map((vault) => 
-            <Container>
-                <NameBlock>
-                    <TokenBlock>
-                        <TokenLogo src={vault.Logo}></TokenLogo>
-                        <TokenName>{vault.Display}</TokenName>
-                    </TokenBlock>
-                    <MechanismBlock>{vault.Mechanism}</MechanismBlock>
-                </NameBlock>
-                {isDes && <LinkBlock> <StablePageCustomLink to={`/stablecoin/${vault.Display}`}> <Button> Mint / Burn </Button> </StablePageCustomLink> </LinkBlock>}
-                {isMob && <CircleButton> <StablePageCustomLink to={`/stablecoin/${vault.Display}`}> <ArrowImg src={Arrow}></ArrowImg> </StablePageCustomLink> </CircleButton>}
-            </Container>
-    ) 
-
-    return(
+    return (
         <div>
             {StableBlock}
         </div>

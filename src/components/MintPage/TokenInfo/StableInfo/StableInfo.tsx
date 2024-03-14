@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useParams } from "react-router";
 import { STABLE_INFO } from "../../../../constants/tokens";
+import { usePairStore } from "../../../../hooks/usePairStore";
 
 const Container = styled.div`
     max-width: 100%;
@@ -16,20 +17,18 @@ const Description = styled.h1`
 
 export const StableInfo = () => {
 
-    let { stable } = useParams()
+    let { stableID } = useParams()
+    const [pairs, setPairs] = usePairStore();
 
-    let temp_description = ""
 
-    STABLE_INFO.find((token) => {
-        if(token.Display == stable) {
-            temp_description = token.Info
-        }
-    })
+    let temp_pair = pairs.find((pair) => pair.pairId == stableID)
+    
+    console.log(temp_pair)
 
     return(
         <Container>
             <Description>
-                {temp_description}
+                {temp_pair?.description}
             </Description>
         </Container>
     )

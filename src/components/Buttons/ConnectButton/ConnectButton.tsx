@@ -10,7 +10,7 @@ const Button = styled.div`
     border-radius: 5px;
     margin-right: 50px;
     cursor: pointer;
-    color: black;
+    color: white;
     margin-top: 7px;
     @media (max-width: 1000px) {
         margin-left: auto;
