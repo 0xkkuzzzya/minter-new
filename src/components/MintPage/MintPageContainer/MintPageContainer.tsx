@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TokenInfo } from "../TokenInfo/TokenInfo";
 import { ConvertBlock } from "../ConvertBlock/ConvertBlock";
+import { TokenChange } from "../../Buttons/TokenChange/TokenChange";
 
 const Container = styled.div`
     width: 100%;

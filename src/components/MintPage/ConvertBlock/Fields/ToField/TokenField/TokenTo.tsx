@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { usePairStore } from "../../../../../../hooks/usePairStore";
 import { STABLE_INFO, TOKEN_INFO } from "../../../../../../constants/tokens";
+import { TokenChange } from "../../../../../Buttons/TokenChange/TokenChange";
 
 const Field = styled.div`
     width: 100%;

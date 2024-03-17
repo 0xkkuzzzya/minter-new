@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ConvertHeader } from "./Header/ConvertHeader";
 import { ConvertFields } from "./Fields/ConvertFields";
+import { TokenChange } from "../../Buttons/TokenChange/TokenChange";
 
 const Container = styled.div`
     width: 300px;
@@ -15,6 +16,7 @@ export const ConvertBlock = () => {
         <Container>
             <ConvertHeader/>
             <ConvertFields/>
+            <TokenChange/>
         </Container>
     )
 }
