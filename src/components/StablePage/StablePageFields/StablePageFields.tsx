@@ -106,7 +106,7 @@ export const StablePageFields = () => {
     pairs.map ((pair) => {
         STABLE_INFO.map((token) => {
             if (pair.displayOut == token.Display) {
-                pair.logo = token.Logo
+                pair.logoOut = token.Logo
             }
         })
     })
@@ -116,7 +116,7 @@ export const StablePageFields = () => {
         <Container>
             <NameBlock>
                 <TokenBlock>
-                    <TokenLogo src={pair.logo}></TokenLogo>
+                    <TokenLogo src={pair.logoOut}></TokenLogo>
                     <TokenName>{pair.displayOut}</TokenName>
                 </TokenBlock>
                 <MechanismBlock>{pair.model}</MechanismBlock>

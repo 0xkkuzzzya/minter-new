@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { FormEvent } from "react";
 import { usePairStore } from "../../../../../../hooks/usePairStore";
 import { TOKEN_INFO } from "../../../../../../constants/tokens";
-import { useAmountInStore } from "../../../../../../hooks/useAmountInStore";
+import { useAmountInStore } from "../../../../../../hooks/useAmountStore";
+import { useTokenFrom } from "../../../../../../hooks/useToken";
 
 const Field = styled.div`
     width: 100%;
@@ -40,11 +41,12 @@ export const TokenFrom = () => {
 
     const [pairs, setPairs] = usePairStore();
     const [amtIn, setAmtIn] = useAmountInStore();
+    const [tokenFrom, setTokenFrom] = useTokenFrom();
 
     pairs.map((pair) => {
         TOKEN_INFO.map((token) => {
             if (pair.denomIn == token.Denom) {
-                pair.logo = token.Logo
+                pair.logoIn = tokenFrom.logo
                 pair.displayIn = token.Base
             }
         })
@@ -60,8 +62,8 @@ export const TokenFrom = () => {
 
     const Token = pairs.map((pair) =>
         <Field>
-            <CollateralLogo src={pair.logo}></CollateralLogo>
-            <CollateralName>{pair.displayIn}</CollateralName>
+            <CollateralLogo src={pair.logoIn}></CollateralLogo>
+            <CollateralName>{tokenFrom.display}</CollateralName>
             <CollateralInput placeholder="0" onChange={HandleInputAmpunt} value={amtIn.amt}></CollateralInput>
         </Field>
     )

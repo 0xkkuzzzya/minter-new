@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { usePairStore } from "../../../../../../hooks/usePairStore";
 import { STABLE_INFO, TOKEN_INFO } from "../../../../../../constants/tokens";
 import { TokenChange } from "../../../../../Buttons/TokenChange/TokenChange";
+import { useTokenTo } from "../../../../../../hooks/useToken";
 
 const Field = styled.div`
     width: 100%;
@@ -45,11 +46,12 @@ const StableName = styled.a`
 export const TokenTo = () => {
 
     const [pairs, setPairs] = usePairStore();
+    const [tokenTo, setTokenTo] = useTokenTo();
 
     pairs.map ((pair) => {
         STABLE_INFO.map((token) => {
             if (pair.displayOut == token.Display) {
-                pair.logo = token.Logo
+                pair.logoOut = tokenTo.logo
                 pair.displayOut = token.Display
             }
         })
@@ -57,8 +59,8 @@ export const TokenTo = () => {
 
     const Token = pairs.map((pair) => 
         <Field>
-            <StableLogo src={pair.logo}></StableLogo>
-            <StableName>{pair.displayOut}</StableName>
+            <StableLogo src={pair.logoOut}></StableLogo>
+            <StableName>{tokenTo.display}</StableName>
             <StableAmountBlock>
                 <StableAmountOut>0</StableAmountOut>
             </StableAmountBlock>

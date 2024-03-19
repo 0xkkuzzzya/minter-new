@@ -20,7 +20,8 @@ export async function UpdatePairs(): Promise<Array<Pair>> {
                 displayIn: pair.amountInMetadata.display,
                 displayOut: pair.amountOutMetadata.display,
                 description: pair.amountOutMetadata.description,
-                logo: pair.logo
+                logoIn: pair.logo,
+                logoOut: pair.logo,
             })
         })
         console.log('work')

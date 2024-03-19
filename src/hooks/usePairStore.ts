@@ -12,7 +12,8 @@ export interface Pair {
     displayIn: string;
     displayOut: string;
     description: string;
-    logo: string;
+    logoIn: string;
+    logoOut: string;
 }
 
 const defaultInState: Array<Pair> = [];

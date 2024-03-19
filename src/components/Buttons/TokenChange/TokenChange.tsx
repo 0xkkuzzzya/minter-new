@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import ConvertSwap from '../../../assets/webp/TokenChange.webp'
-import { useAmountInStore } from '../../../hooks/useAmountInStore'
+import { useAmountInStore, useAmountOutStore } from '../../../hooks/useAmountStore'
 import { usePairStore } from '../../../hooks/usePairStore'
 import { useTokenFrom, useTokenTo } from '../../../hooks/useToken'
 
@@ -26,16 +26,29 @@ const SwapImage = styled.img <{ConvertLogo: string}>`
 export const TokenChange = () => {
 
     const [pairs, setPairs] = usePairStore();
-    const [amtIn, setAmtIn] = useAmountInStore();
+    const [amountIn, setAmountIn] = useAmountInStore();
+    const [amountOut, setAmountOut] = useAmountOutStore();
     const [tokenFrom, setTokenFrom] = useTokenFrom();
     const [tokenTo, setTokenTo] = useTokenTo();
 
     let Handler = async () => {
-        pairs.map((token) => {
-            token.displayOut = token.displayIn
+        let oldTokenFrom = tokenFrom
+        setTokenFrom({
+            logo: tokenTo.logo,
+            base: tokenTo.base,
+            display: tokenTo.display
+        })
+        setTokenTo({
+            logo: oldTokenFrom.logo,
+            base: oldTokenFrom.base,
+            display: oldTokenFrom.display
         })
 
-        console.log(pairs)
+        let oldAmountIn = amountIn
+        setAmountIn(amountOut);
+        setAmountOut(oldAmountIn);
+
+        console.log(amountIn)
     }
 
     return(

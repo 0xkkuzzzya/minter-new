@@ -22,8 +22,6 @@ export const StableInfo = () => {
 
 
     let temp_pair = pairs.find((pair) => pair.pairId == stableID)
-    
-    console.log(temp_pair)
 
     return(
         <Container>
