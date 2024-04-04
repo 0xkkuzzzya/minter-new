@@ -1,21 +1,18 @@
 import { createStore } from './store';
 import AtomLogo from '../assets/webp/AtomLogo.webp'
 import USQLogo from '../assets/webp/USQLogo.webp'
+import { TokenType } from '../constants/tokens';
 
-export interface TokenFrom {
+export interface Token {
     logo: string;
     base: string;
-    display: string
+    display: string;
+    type: string;
 }
 
-export interface TokenTo {
-    logo: string;
-    base: string;
-    display: string
-}
 
-const TokenFromState: TokenFrom = { logo: AtomLogo, base: "", display: "ATOM" };
-const TokenToState: TokenTo = { logo: USQLogo, base: "", display: "USQ" };
+const TokenFromState: Token = { logo: AtomLogo, base: "", display: "ATOM", type: "collateral" };
+const TokenToState: Token = { logo: USQLogo, base: "", display: "USQ", type: "qAsset" };
 
 export const [useTokenFrom] = createStore(TokenFromState);
 export const [useTokenTo] = createStore(TokenToState);
