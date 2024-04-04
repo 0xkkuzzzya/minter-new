@@ -5,7 +5,7 @@ import { QUBE_TESTNET_INFO, TOKEN_INFO_COLLATERAL, STABLE_INFO_QASSETS } from '.
 import { TokenType } from '../../../constants/tokens'
 import { useInfoStore } from '../../../hooks/useInfoStore'
 import { useEffect } from 'react'
-import { TransactionInfoButton } from '../../Buttons/PageButtons/MintPageButtons/TransactionInfoButton'
+import { TransactionInfoButton } from '../../Buttons/PageButtons/TransactionInfoButton'
 import { useTokenFrom, useTokenTo } from '../../../hooks/useToken'
 import { usePairStore } from '../../../hooks/usePairStore'
 

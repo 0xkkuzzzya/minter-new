@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { usePairStore } from "../../../../../../hooks/usePairStore";
 import { STABLE_INFO_QASSETS, TOKEN_INFO_COLLATERAL, TokenType } from "../../../../../../constants/tokens";
-import { TokenChange } from "../../../../../Buttons/PageButtons/TokenChange/TokenChange";
 import { useTokenFrom, useTokenTo } from "../../../../../../hooks/useToken";
 import { useEffect, useState } from "react";
 import { QUBE_TESTNET_INFO } from "../../../../../../constants";

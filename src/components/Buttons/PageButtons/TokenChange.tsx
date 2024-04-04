@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import ConvertSwap from '../../../../assets/webp/ConvertSwap.svg'
-import { useAmountInStore, useAmountOutStore } from '../../../../hooks/useAmountStore'
-import { usePairStore } from '../../../../hooks/usePairStore'
-import { useTokenFrom, useTokenTo } from '../../../../hooks/useToken'
+import ConvertSwap from '../../../assets/webp/ConvertSwap.svg'
+import { useAmountInStore, useAmountOutStore } from '../../../hooks/useAmountStore'
+import { usePairStore } from '../../../hooks/usePairStore'
+import { useTokenFrom, useTokenTo } from '../../../hooks/useToken'
 
 const TokenChangeDiv = styled.div `
     display: flex;

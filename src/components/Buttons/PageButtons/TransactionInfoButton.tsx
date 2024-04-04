@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { useState } from "react";
-import { QUBE_TESTNET_INFO } from '../../../../constants'
-import { useAccordionStore } from '../../../../hooks/useAccordionStore';
-import { useToggleTheme } from '../../../../hooks/useToggleTheme';
-import { useTokenFrom, useTokenTo } from '../../../../hooks/useToken';
+import { QUBE_TESTNET_INFO } from '../../../constants'
+import { useAccordionStore } from '../../../hooks/useAccordionStore';
+import { useToggleTheme } from '../../../hooks/useToggleTheme';
+import { useTokenFrom, useTokenTo } from '../../../hooks/useToken';
+import ArrowWhite from '../../../assets/webp/ArrowWhite.svg'
+import ArrowBlack from '../../../assets/webp/ArrowBlack.svg'
 
 
 const ButtonInfoMain = styled.button <{ TextColor: string }>`
@@ -30,7 +32,6 @@ const InfoImg = styled.svg <{ ArrrowColor: string }> `
     stroke: none;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-top:-5px;
     margin-left: 5px;
     cursor: pointer;
 `
@@ -88,6 +89,7 @@ export const TransactionInfoButton = () => {
         <ButtonInfoMain TextColor={theme.TextColor} onClick={openInfoBlock}>
             <ButtonInfoMain TextColor={theme.TextColor}>
                 1 {tokenFrom.display} = {price} {tokenTo.display}
+                <InfoImg ArrrowColor={theme.active == true ? ArrowWhite : ArrowBlack}></InfoImg>
             </ButtonInfoMain>
         </ButtonInfoMain>
     )
