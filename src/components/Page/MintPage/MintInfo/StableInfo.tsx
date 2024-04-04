@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useParams } from "react-router";
-import { usePairStore } from "../../../hooks/usePairStore";
-import { useToggleTheme } from "../../../hooks/useToggleTheme";
+import { usePairStore } from "../../../../hooks/usePairStore";
+import { useToggleTheme } from "../../../../hooks/useToggleTheme";
 
 const Container = styled.div`
     max-width: 100%;

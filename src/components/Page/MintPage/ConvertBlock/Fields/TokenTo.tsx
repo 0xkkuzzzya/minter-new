@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { usePairStore } from "../../../../../../hooks/usePairStore";
-import { STABLE_INFO_QASSETS, TOKEN_INFO_COLLATERAL, TokenType } from "../../../../../../constants/tokens";
-import { useTokenFrom, useTokenTo } from "../../../../../../hooks/useToken";
+import { usePairStore } from "../../../../../hooks/usePairStore";
+import { STABLE_INFO_QASSETS, TOKEN_INFO_COLLATERAL, TokenType } from "../../../../../constants/tokens";
+import { useTokenFrom, useTokenTo } from "../../../../../hooks/useToken";
 import { useEffect, useState } from "react";
-import { QUBE_TESTNET_INFO } from "../../../../../../constants";
-import { useAmountInStore, useAmountOutStore } from "../../../../../../hooks/useAmountStore";
-import { useToggleTheme } from "../../../../../../hooks/useToggleTheme";
+import { QUBE_TESTNET_INFO } from "../../../../../constants";
+import { useAmountInStore, useAmountOutStore } from "../../../../../hooks/useAmountStore";
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const Field = styled.div <{BorderField: string}>`
     width: 100%;

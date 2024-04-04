@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { FormEvent } from "react";
-import { usePairStore } from "../../../../../../hooks/usePairStore";
-import { TOKEN_INFO_COLLATERAL } from "../../../../../../constants/tokens";
-import { useAmountInStore } from "../../../../../../hooks/useAmountStore";
-import { useTokenFrom } from "../../../../../../hooks/useToken";
-import { useToggleTheme } from "../../../../../../hooks/useToggleTheme";
+import { usePairStore } from "../../../../../hooks/usePairStore";
+import { TOKEN_INFO_COLLATERAL } from "../../../../../constants/tokens";
+import { useAmountInStore } from "../../../../../hooks/useAmountStore";
+import { useTokenFrom } from "../../../../../hooks/useToken";
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const Field = styled.div <{BorderField: string}>`
     width: 100%;

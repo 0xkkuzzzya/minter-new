@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ConvertHeader } from "../../Headers/MintPage/ConvertHeader";
+import { ConvertHeader } from "../../../Headers/MintPage/ConvertHeader";
 import { ConvertFields } from "./Fields/ConvertFields";
-import { TokenChange } from "../../Buttons/PageButtons/TokenChange";
+import { TokenChange } from "../../../Buttons/PageButtons/TokenChange";
 import { TransactionInfo } from "../MintInfo/TransactionInfo";
-import { SwapButton } from "../../Buttons/PageButtons/SwapButton";
+import { SwapButton } from "../../../Buttons/PageButtons/SwapButton";
 
 const Container = styled.div`
     width: 300px;

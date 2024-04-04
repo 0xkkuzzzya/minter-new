@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FromField } from "./FromField/FromField";
-import { ToField } from "./ToField/ToField";
+import { FromField } from "./FromField";
+import { ToField } from "./ToField";
 
 const Container = styled.div`
     width: 100%;

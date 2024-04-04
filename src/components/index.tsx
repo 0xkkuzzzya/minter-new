@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { MainHeader } from "./Headers/MainHeader/MainHeader";
 import { Routes, Route } from 'react-router-dom';
 import { StablePage } from "./Page/StablePage/StablePage";
-import { MintPage } from "./MintPage/MintPage";
 import { useToggleTheme } from "../hooks/useToggleTheme";
+import { MintPage } from "./Page/MintPage/MintPage";
 
 const Contrainer = styled.div <{ backgroundColor: string}>`
     width: 100%;

@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { useEffect } from 'react'
-import { usePairStore } from "../../hooks/usePairStore";
-import { UpdatePairs } from "../../connection/pairs";
+import { usePairStore } from "../../../hooks/usePairStore";
+import { UpdatePairs } from "../../../connection/pairs";
 import { useParams } from "react-router-dom";
-import { useTokenFrom, useTokenTo } from "../../hooks/useToken";
+import { useTokenFrom, useTokenTo } from "../../../hooks/useToken";
 import { ConvertBlock } from "./ConvertBlock/ConvertBlock";
 import { TokenInfo } from "./MintInfo/TokenInfo";
 import { useMediaQuery } from "react-responsive";
-import { SwapButton } from "../Buttons/PageButtons/SwapButton";
 
 const Container = styled.div`
     width: 100%;

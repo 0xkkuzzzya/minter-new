@@ -22,8 +22,8 @@ export function MakeStableMsg(): Msg {
         const [ tokenTo, setTokenTo] = useTokenTo();
         const [ wallet, setWallet ] = useWallet();
 
-        let tokenInfoFrom = (tokenFrom.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenFrom.base);
-        let tokenInfoTo = (tokenTo.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenTo.base);
+        let tokenInfoFrom = (tokenFrom.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenFrom.display);
+        let tokenInfoTo = (tokenTo.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenTo.display);
         
         let Msg: MsgBody = {
                 creator: wallet.init == true && wallet.type == "keplr"? wallet.wallet.bech32.bech32Address : "",

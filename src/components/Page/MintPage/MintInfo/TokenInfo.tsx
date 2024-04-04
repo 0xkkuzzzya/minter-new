@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Arrow from '../../../assets/webp/ArrowBack.webp'
-import { TokenInfoHeader } from "../../Headers/MintPage/TokenInfoHeader";
-import { MintPageLinkBack } from "../../CustomLink/MintPageLinkBack/MintPageLinkBack";
+import Arrow from '../../../../assets/webp/ArrowBack.webp'
+import { TokenInfoHeader } from "../../../Headers/MintPage/TokenInfoHeader";
+import { MintPageLinkBack } from "../../../CustomLink/MintPageLinkBack/MintPageLinkBack";
 import { StableInfo } from "./StableInfo";
 
 const Container = styled.div`

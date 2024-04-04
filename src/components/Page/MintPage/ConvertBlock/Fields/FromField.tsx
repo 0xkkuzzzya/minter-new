@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TokenFrom } from "./TokenField/TokenFrom";
+import { TokenFrom } from "./TokenFrom";
 import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const Container = styled.div`
