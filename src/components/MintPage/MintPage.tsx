@@ -7,6 +7,7 @@ import { useTokenFrom, useTokenTo } from "../../hooks/useToken";
 import { ConvertBlock } from "./ConvertBlock/ConvertBlock";
 import { TokenInfo } from "./MintInfo/TokenInfo";
 import { useMediaQuery } from "react-responsive";
+import { SwapButton } from "../Buttons/PageButtons/SwapButton";
 
 const Container = styled.div`
     width: 100%;
@@ -15,7 +16,7 @@ const Container = styled.div`
 const ContainerPage = styled.div`
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 160px;
 `
 
 
