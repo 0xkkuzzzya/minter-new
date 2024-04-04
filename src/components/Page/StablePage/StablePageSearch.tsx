@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
-const Container = styled.div`
+const Container = styled.div <{BorderField: string}>`
     width: 100%;
     height: 40px;
-    border: 2px solid #3A3A3A;
+    border: ${props => props.BorderField};
     display: flex;
     justify-content: center;
     border-radius: 50px;
@@ -22,8 +23,11 @@ const SearchInput = styled.input`
 
 
 export const StablePageSearch = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
-        <Container>
+        <Container BorderField={theme.BorderField}>
             <SearchInput placeholder="Search"></SearchInput>
         </Container>
     )

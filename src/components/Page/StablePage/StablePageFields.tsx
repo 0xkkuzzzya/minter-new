@@ -3,14 +3,14 @@ import Arrow from '../../../assets/webp/Arrow.svg'
 import { StablePageCustomLink } from "../../CustomLink/StablePageCustomLink/StablePageCustomLink";
 import { useMediaQuery } from "react-responsive";
 import { usePairStore } from "../../../hooks/usePairStore";
-import { STABLE_INFO } from "../../../constants/tokens";
+import { STABLE_INFO_QASSETS } from "../../../constants/tokens";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
-
-const Container = styled.div`
+const Container = styled.div <{BorderField: string, headerColor: string}>`
     width: 100%;
     height: 60px;
-    background: #202020;
-    border: 3px solid #3A3A3A;
+    background: ${props => props.headerColor};
+    border: ${props => props.BorderField};
     border-radius: 20px;
     margin-top: 10px;
     display: flex;
@@ -35,8 +35,8 @@ const TokenLogo = styled.img`
     width: 40px;
 `
 
-const TokenName = styled.a`
-    color: white;
+const TokenName = styled.a <{TextColor: string}>`
+    color: ${props => props.TextColor};
     font-size: 22px;
     font-weight: 600;
     margin-left: 10px;
@@ -94,6 +94,7 @@ const ArrowImg = styled.img`
 export const StablePageFields = () => {
 
     const [pairs, setPairs] = usePairStore();
+    const [theme, setTheme] = useToggleTheme()
 
     const isDes = useMediaQuery({
         query: "(min-device-width: 500px)",
@@ -104,8 +105,8 @@ export const StablePageFields = () => {
 
 
     pairs.map ((pair) => {
-        STABLE_INFO.map((token) => {
-            if (pair.displayOut == token.Display) {
+        STABLE_INFO_QASSETS.map((token) => {
+            if (pair.displayOut == token.Base) {
                 pair.logoOut = token.Logo
             }
         })
@@ -113,11 +114,11 @@ export const StablePageFields = () => {
 
 
     const StableBlock = pairs.map((pair) =>
-        <Container>
+        <Container headerColor={theme.headerColor} BorderField={theme.BorderField}>
             <NameBlock>
                 <TokenBlock>
                     <TokenLogo src={pair.logoOut}></TokenLogo>
-                    <TokenName>{pair.displayOut}</TokenName>
+                    <TokenName TextColor={theme.TextColor}>{pair.displayOut}</TokenName>
                 </TokenBlock>
                 <MechanismBlock>{pair.model}</MechanismBlock>
             </NameBlock>

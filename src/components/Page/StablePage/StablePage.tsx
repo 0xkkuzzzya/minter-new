@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useEffect } from 'react'
-import { StablePageSearch } from "./StablePageSearch/StablePageSearch";
-import { StablePageHeader } from "./StablePageHeader/StablePageHeader";
-import { StablePageFields } from "./StablePageFields/StablePageFields";
-import { StablePageInfo } from "./StablePageInfo/StablePageInfo";
-import { UpdatePairs } from "../../connection/pairs";
-import { usePairStore } from "../../hooks/usePairStore";
+import { StablePageSearch } from "./StablePageSearch";
+import { StablePageHeader } from "../../Headers/StablePage/StablePageHeader";
+import { StablePageFields } from "./StablePageFields";
+import { StablePageInfo } from "./StablePageInfo";
+import { UpdatePairs } from "../../../connection/pairs";
+import { usePairStore } from "../../../hooks/usePairStore";
 
 const Container = styled.div`
     width: 550px;
