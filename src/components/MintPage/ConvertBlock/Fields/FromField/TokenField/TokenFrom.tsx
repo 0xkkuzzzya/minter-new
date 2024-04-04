@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { FormEvent } from "react";
 import { usePairStore } from "../../../../../../hooks/usePairStore";
-import { TOKEN_INFO } from "../../../../../../constants/tokens";
+import { TOKEN_INFO_COLLATERAL } from "../../../../../../constants/tokens";
 import { useAmountInStore } from "../../../../../../hooks/useAmountStore";
 import { useTokenFrom } from "../../../../../../hooks/useToken";
+import { useToggleTheme } from "../../../../../../hooks/useToggleTheme";
 
-const Field = styled.div`
+const Field = styled.div <{BorderField: string}>`
     width: 100%;
     height: 60px;
-    border: 2px solid #333333;
+    border: ${props => props.BorderField};
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -19,20 +20,20 @@ const CollateralLogo = styled.img`
     margin-left: 10px;
 `
 
-const CollateralInput = styled.input`
+const CollateralInput = styled.input <{TextColor: string}>`
     width: 70%;
     height: 100%;
     text-align: right;
     background: transparent;
     font-size: 20px;
-    color: white;
+    color: ${props => props.TextColor};
     margin-right: 10px;
 `
 
-const CollateralName = styled.a`
+const CollateralName = styled.a <{TextColor: string}>`
     font-size: 20px;
     font-weight: 600;
-    color: white;
+    color: ${props => props.TextColor};
     margin-left: 5px;
 `
 
@@ -42,9 +43,10 @@ export const TokenFrom = () => {
     const [pairs, setPairs] = usePairStore();
     const [amtIn, setAmtIn] = useAmountInStore();
     const [tokenFrom, setTokenFrom] = useTokenFrom();
+    const [theme, setTheme] = useToggleTheme()
 
     pairs.map((pair) => {
-        TOKEN_INFO.map((token) => {
+        TOKEN_INFO_COLLATERAL.map((token) => {
             if (pair.denomIn == token.Denom) {
                 pair.logoIn = tokenFrom.logo
                 pair.displayIn = token.Base
@@ -61,10 +63,14 @@ export const TokenFrom = () => {
     };
 
     const Token = pairs.map((pair) =>
-        <Field>
+        <Field BorderField={theme.BorderField}>
             <CollateralLogo src={pair.logoIn}></CollateralLogo>
-            <CollateralName>{tokenFrom.display}</CollateralName>
-            <CollateralInput placeholder="0" onChange={HandleInputAmpunt} value={amtIn.amt}></CollateralInput>
+            <CollateralName TextColor={theme.TextColor}>{tokenFrom.display}</CollateralName>
+            <CollateralInput 
+            TextColor={theme.TextColor} 
+            placeholder="0" 
+            onChange={HandleInputAmpunt} 
+            value={amtIn.amt}></CollateralInput>
         </Field>
     )
 

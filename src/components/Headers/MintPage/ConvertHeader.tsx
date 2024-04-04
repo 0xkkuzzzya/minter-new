@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 const Header = styled.div`
     width: 100%;
@@ -6,8 +7,8 @@ const Header = styled.div`
     flex-direction: column;
 `
 
-const HeaderText = styled.h1`
-    color: white;
+const HeaderText = styled.h1 <{TextColor: string}>`
+    color: ${props => props.TextColor};
     font-size: 25px;
     margin: 0;
 `
@@ -22,9 +23,12 @@ const BlueLine = styled.div`
 
 
 export const ConvertHeader = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
         <Header>
-            <HeaderText>Convert qAssets</HeaderText>
+            <HeaderText TextColor={theme.TextColor}>Convert qAssets</HeaderText>
             <BlueLine/>
         </Header>
     )

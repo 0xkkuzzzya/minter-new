@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TokenFrom } from "./TokenField/TokenFrom";
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const Container = styled.div`
     width: 100%;
@@ -7,17 +8,19 @@ const Container = styled.div`
     flex-direction: column;
 `
 
-const FieldHeader = styled.h3`
-    color: white;
+const FieldHeader = styled.h3 <{TextColor: string}>`
+    color: ${props => props.TextColor};
     font-size: 15px;
 `
 
 
 export const FromField = () => {
 
+    const [theme, setTheme] = useToggleTheme()
+
     return(
         <Container>
-            <FieldHeader>From</FieldHeader>
+            <FieldHeader TextColor={theme.TextColor}>From</FieldHeader>
             <TokenFrom/>
         </Container>
     )

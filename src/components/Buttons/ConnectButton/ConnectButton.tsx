@@ -12,9 +12,6 @@ const Button = styled.div`
     cursor: pointer;
     color: white;
     margin-top: 7px;
-    @media (max-width: 1000px) {
-        margin-left: auto;
-    }
     @media (max-width: 500px) {
         margin-right: 20px;
     }

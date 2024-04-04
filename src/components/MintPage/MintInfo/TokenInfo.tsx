@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Arrow from '../../../assets/webp/ArrowBack.webp'
-import { TokenInfoHeader } from "./Header/Header";
+import { TokenInfoHeader } from "../../Headers/MintPage/TokenInfoHeader";
 import { MintPageLinkBack } from "../../CustomLink/MintPageLinkBack/MintPageLinkBack";
-import { StableInfo } from "./StableInfo/StableInfo";
+import { StableInfo } from "./StableInfo";
 
 const Container = styled.div`
     width: 300px;
@@ -27,7 +27,7 @@ export const TokenInfo = () => {
     return(
         <Container>
             <LinkBlock>
-                <MintPageLinkBack to="/stablecoins">
+                <MintPageLinkBack to="/">
                     <ArrowLogo src={Arrow}></ArrowLogo>
                     Back
                 </MintPageLinkBack>
