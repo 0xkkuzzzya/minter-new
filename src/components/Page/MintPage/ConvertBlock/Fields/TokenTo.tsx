@@ -89,11 +89,8 @@ export const TokenTo = () => {
     let tokenInfoFrom = (tokenFrom.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenFrom.display)
 
     action = (tokenInfoFrom?.Type == TokenType.collateral ? "mint" : "burn");
-
-    console.log(tokenFrom)
     
     useEffect(() => {
-        console.log(tokenFrom.type)
         const timeoutId = setTimeout(() =>
             getAmountOutByAmountIn(pair, QUBE_TESTNET_INFO.rest, Number(amtIn.amt), String(action), amt, Number(tokenInfoFrom?.Decimals))
                 .then(amountOut => {

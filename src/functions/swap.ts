@@ -19,9 +19,6 @@ interface MsgBody {
 
 export async function swap(amount: AmountIn, tokenFrom: Token, tokenTo: Token, wallet: Wallet, client: Client): Promise<AlertType> {
 	try {
-
-		console.log('work')
-
 		let tokenInfoFrom = (tokenFrom.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenFrom.display);
 		let tokenInfoTo = (tokenTo.type == "collateral" ? TOKEN_INFO_COLLATERAL : STABLE_INFO_QASSETS).find((token: any) => token.Base == tokenTo.display);
 
