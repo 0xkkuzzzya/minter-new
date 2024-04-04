@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { ConvertHeader } from "../../Headers/MintPage/ConvertHeader";
 import { ConvertFields } from "./Fields/ConvertFields";
-import { TokenChange } from "../../Buttons/PageButtons/TokenChange/TokenChange";
+import { TokenChange } from "../../Buttons/PageButtons/TokenChange";
 import { TransactionInfo } from "../MintInfo/TransactionInfo";
+import { SwapButton } from "../../Buttons/PageButtons/SwapButton";
 
 const Container = styled.div`
     width: 300px;
@@ -24,6 +25,7 @@ export const ConvertBlock = () => {
             <ConvertFields/>
             <TokenChange/>
             <TransactionInfo/>
+            <SwapButton/>
         </Container>
     )
 }
